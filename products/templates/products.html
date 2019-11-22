@@ -1,17 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Products Page</title>
     {% load static %}
 
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <h1>Gamharia Store</h1>
+    <div class="content">
+      {% for product in products %}
+      <div class="card">
+        <div id="img">
+          <img src="{{ product.img }}" alt="puma sneakers" />
+          <!--<div class="button">
+            <span>View Details</span>
+          </div> -->
+        </div>
+        <div id="desc">
+          <h4>{{ product.title }}</h4>
 
-</head>
-<body>
-<h1>Products Page</h1>
-<h2>{{ Product1.title }}</h2>
-<p>{{ Product1.description }}</p>
-<p>{{ Product1.price }}</p>
-</body>
+          <p>{{ product.description }}</p>
+        </div>
+        <div id="price">
+          <span>&#x20b9;{{ product.price }}</span>
+        </div>
+      </div>
+      {% endfor %}
+
+      <!--Second Product-->
+      <!-- <div class="card">
+        <div id="img">
+          <img src="{{ Product2.img }}" alt="puma sneakers" />
+          <<div class="button">
+            <span>View Details</span>
+          </div> 
+        </div>
+        <div id="desc">
+          <h4>{{ Product2.title }}</h4>
+
+          <p>{{ Product2.description }}</p>
+        </div>
+        <div id="price">
+          <span>&#x20b9;{{ Product2.price }}</span>
+        </div>
+      </div> -->
+    </div>
+  </body>
 </html>

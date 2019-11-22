@@ -7,10 +7,17 @@ from django.core import serializers
 
 
 def products_view(request):
-    Product1 = Product.objects.get(id=1)
+    products = Product.objects.all()
     content = {
-        "Product1":Product1
+       'products':products
     }
+    #Product1 = Product.objects.get(id=1)
+    #Product2 = Product.objects.get(id=2)
+    #content = {
+        #"Product1":Product1,
+        #"Product2":Product2
+   # }
+   
     print(content)
     return render(request,'products.html',content)
 
